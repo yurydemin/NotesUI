@@ -1,0 +1,33 @@
+//
+//  Release.xcconfig
+//  Notes
+//
+//  Created by dyy-mac on 28/06/2019.
+//  Copyright © 2019 test. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// settings
+MY_APP_NAME = Notes Release
+MY_APP_VERSION = 0.001
+MY_APP_BUNDLE_ID = com.test.NotesRelease
+
+// vars
+MY_NOTES_FILENAME = release.json
+
+// pods
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaLumberjack"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CocoaLumberjack"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.modulemap"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_INCLUDE_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack"
+
