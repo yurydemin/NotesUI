@@ -1,0 +1,1 @@
+Yandex IOS starter project
